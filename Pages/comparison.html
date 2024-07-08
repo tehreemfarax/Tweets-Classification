@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sentiment Analysis API Test</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f5;
+        color: #333;
+        padding-bottom: 10px;
+      }
+      nav {
+        background-color: #4caf50;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+      nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        height: 1.5cm;
+        text-align: center;
+        align-content: center;
+        width: 25%;
+      }
+      nav a:hover {
+        background-color: #249227;
+      }
+      .heading {
+        color: #4caf50;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 1000;
+        text-decoration: underline;
+        font-size: 45px;
+      }
+      img {
+        display: block;
+        height: auto;
+        max-width: 50%;
+        margin: 10px auto;
+        box-shadow: 0 0 10px rgba(78, 77, 77, 0.71);
+      }
+      h2 {
+        color: #4caf50;
+        text-shadow: 0 0 10px rgba(78, 77, 77, 0.422);
+        font-weight: 900;
+        font-size: 35px;
+        text-align: center;
+      }
+      .confusions {
+        display: flex;
+        flex-direction: column;
+      }
+      h3{
+        color: rgb(119, 28, 185);
+        text-shadow: 0 0 10px rgba(78, 77, 77, 0.422);
+        font-weight: 800;
+        font-size: 30px;
+        text-decoration: underline;
+        text-align: center;
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="heading">Tweets Sentiment Analysis</h1>
+    <nav>
+      <a href="./index.html">Predict Sentiment</a>
+      <a href="./models.html">Know Models!</a>
+      <a href="#">Performance Comparison</a>
+      <a href="./eda.html">EXPLORATORY DATA ANALYSIS</a>
+    </nav>
+    <div>
+      <h2 style="margin-bottom: 0;">CONFUSION MATRICES</h2>
+      <div
+        class="confusion"
+        style="
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          margin: 10px auto;
+        "
+      >
+        <div class="confusions">
+          <h3>RANDOM FOREST</h3>
+          <img src="../confusion_matrix/rf_conf.png" />
+        </div>
+        <div class="confusions">
+          <h3>LOGISTIC REGRESSION</h3>
+          <img src="../confusion_matrix/lr_conf.png" />
+        </div>
+        </div class="confusions">
+        <div
+        class="confusion"
+        style="
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          margin: 10px auto;
+        "
+      >
+        <div class="confusions">
+          <h3>DECISION TREES</h3>
+          <img src="../confusion_matrix/dt_conf.png" />
+        </div>
+        <div class="confusions">
+          <h3>NAIVE BAYESIAN</h3>
+          <img src="../confusion_matrix/nb_conf.png" />
+        </div>
+      </div>
+    </div>
+    <div>
+        <hr>
+        <h2>PERFORMANCE COMPARISON</h2>
+        <img src="../performance_compare.png" />
+      </div>
+  </body>
+</html>

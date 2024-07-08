@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sentiment Analysis API Test</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f5;
+        color: #333;
+        padding-bottom: 10px;
+      }
+      nav {
+        background-color: #4caf50;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+      nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        height: 1.5cm;
+        text-align: center;
+        align-content: center;
+        width: 25%;
+      }
+      nav a:hover {
+        background-color: #249227;
+      }
+      h1 {
+        color: white;
+        text-align: center;
+      }
+      .Models {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        margin: 10px auto;
+        padding: 10px;
+        align-items: center;
+      }
+      .modelName1 {
+        display: flex;
+        flex-direction: column;
+        background-color: #4caf50;
+        padding: 10px;
+        padding-top: 0;
+        padding-bottom: 0;
+        width: 10.5cm;
+        height: 8.5cm;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+      }
+      .modelName1 img{
+        border-bottom-left-radius: 50px;
+      }
+      .modelName2 img{
+        border-bottom-right-radius: 50px;
+      }
+      img {
+        height: 80%;
+        margin-left: 0.5cm;
+        margin-right: 0.5cm;
+        margin-bottom: 0.5cm;
+        margin-top: 0;
+      }
+      .info1 {
+        background-color: white;
+        width: 100%;
+        height: 7cm;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        padding: 20px;
+        text-align: justify;
+        line-height: 0.85cm;
+        align-content: center;
+        box-shadow: 0 0 10px rgba(78, 77, 77, 0.71);
+      }
+      .modelName2 {
+        display: flex;
+        flex-direction: column;
+        background-color: #4caf50;
+        padding: 10px;
+        padding-top: 0;
+        padding-bottom: 0;
+        width: 10.5cm;
+        height: 8.5cm;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+      }
+      .info2 {
+        background-color: white;
+        width: 100%;
+        height: 7cm;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        padding: 20px;
+        text-align: justify;
+        line-height: 0.85cm;
+        align-content: center;
+        box-shadow: 0 0 10px rgba(78, 77, 77, 0.71);
+      }
+      .heading {
+        color: #4caf50;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 1000;
+        text-decoration: underline;
+        font-size: 45px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="heading">Tweets Sentiment Analysis</h1>
+    <nav>
+      <a href="./index.html">Predict Sentiment</a>
+      <a href="#">Know Models!</a>
+      <a href="./comparison.html">Performance Comparison</a>
+      <a href="./eda.html">EXPLORATORY DATA ANALYSIS</a>
+    </nav>
+
+    <!-- Random Forest -->
+    <div class="Models">
+      <div class="modelName1">
+        <h1>RANDOM FOREST</h1>
+        <img src="../model_info/rf-classifier-1024x576.png" alt="" />
+      </div>
+      <div class="info1">
+        <p>
+          Random Forest is an ensemble learning method that constructs a
+          multitude of decision trees during training.
+          <strong>It aggregates the predictions</strong> of multiple decision
+          trees to improve accuracy and <strong>control overfitting</strong>.
+          Each tree in the forest operates independently, making it suitable for
+          <strong>complex datasets</strong> and
+          <strong>high-dimensional feature spaces</strong>. Random Forest is
+          robust against overfitting and can handle missing values and outliers
+          effectively. It's widely used in various domains, including
+          <strong>finance</strong>, <strong>medicine</strong>, and
+          <strong>ecommerce</strong>.
+        </p>
+      </div>
+    </div>
+
+    <!-- Logistic Regression -->
+    <div class="Models">
+      <div class="info2">
+        <p>
+          Logistic Regression is a statistical model used for binary
+          classification tasks. <strong>It predicts the probability</strong> of
+          an event occurring based on input variables. Unlike linear regression,
+          <strong>Logistic Regression outputs probabilities</strong> and applies
+          a sigmoid function to linearly combine input features. It's efficient,
+          interpretable, and suitable for <strong>large datasets</strong> with
+          <strong>linearly separable classes</strong>. Logistic Regression is
+          foundational in <strong>medical diagnostics</strong>,
+          <strong>customer churn prediction</strong>, and
+          <strong>credit scoring</strong>.
+        </p>
+      </div>
+      <div class="modelName2">
+        <h1>LOGISTIC REGRESSION</h1>
+        <img src="../model_info/logistic_regression.png" alt="" />
+      </div>
+    </div>
+
+    <!-- Decision Tree -->
+    <div class="Models">
+      <div class="modelName1">
+        <h1>DECISION TREE</h1>
+        <img src="../model_info/decision_tree.png" style="height: 70%" alt="" />
+      </div>
+      <div class="info1">
+        <p>
+          Decision Tree is a non-parametric supervised learning method used for
+          classification and regression tasks.
+          <strong>It partitions the data</strong> recursively based on features
+          to create a tree-like structure. Each internal node represents a
+          feature, and each leaf node represents a class label or numerical
+          value. Decision Trees are <strong>interpretable</strong> and can
+          capture <strong>non-linear relationships</strong> in data. However,
+          they're prone to <strong>overfitting</strong> with complex datasets
+          unless techniques like pruning are applied. They're commonly used in
+          <strong>risk assessment</strong>, <strong>fraud detection</strong>,
+          and <strong>recommendation systems</strong>.
+        </p>
+      </div>
+    </div>
+
+    <!-- Naive Bayesian -->
+    <div class="Models">
+      <div class="info2">
+        <p>
+          Naive Bayesian is a probabilistic classifier based on Bayes' theorem
+          with strong independence assumptions between features.
+          <strong>It calculates the probability</strong> of each class given the
+          input features and selects the class with the highest probability.
+          Despite its simplistic assumptions, Naive Bayesian is
+          <strong>effective</strong> for <strong>text classification</strong>,
+          <strong>spam filtering</strong>, and
+          <strong>medical diagnosis</strong>. It's computationally efficient,
+          scales well with <strong>large datasets</strong>, and
+          <strong>handles noise and irrelevant features gracefully</strong>.
+        </p>
+      </div>
+      <div class="modelName2">
+        <h1>NAIVE BAYESIAN</h1>
+        <img src="../model_info/naive_bayesian.png" style="height: 70%" alt="" />
+      </div>
+    </div>
+  </body>
+</html>
